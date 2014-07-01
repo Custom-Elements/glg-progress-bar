@@ -1,23 +1,14 @@
 <polymer-element name="progress-bar" attributes="">
-    <template>
-        <link rel="stylesheet" type="text/css" href="./progress-bar.less">
-        <label>
-            <span class="h5">{{ label }}</span>
-            <span class="right">{{ step }} of {{ steps }} Completed</span>
-        </label>
-        <progress max="100" value="{{ (step / steps) * 100 }}" data-value="{{ (step / steps) * 100 }}"></progress>
+<template>
+  <link rel="stylesheet" type="text/css" href="./progress-bar.less">
 
-        <!-- <div class="badges">
-          <div class="badge registration earned"></div>
-          <div class="badge biography earned"></div>
-          <div class="badge recommend earned"></div>
-          <div class="badge action"></div>
-        </div> -->
+  <label>
+    <span class="h5">{{ label }}</span>
+  </label>
+  <div class="progress-bar">
+    <span style="width: {{ value }}%;">Progress: {{ value }}%</span>
+  </div>
 
-        <hr>
-
-        <label for="">Slide me</label>
-        <input type="range" name="points" min="1" max="{{ steps }}" value="{{ step }}">
-    </template>
+</template>
 <script src="./progress-bar.litcoffee"></script>
 </polymer-element>

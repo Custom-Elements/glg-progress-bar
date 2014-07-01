@@ -1,25 +1,92 @@
-<polymer-element name="progress-bar" attributes="" assetpath="../src/">
-    <template>
-        <style type="text/css">:host{display:block}progress[value]{position:relative;width:100%;height:1.5em;padding-top:.5em;padding-right:0;padding-bottom:0;padding-left:0;-webkit-appearance:none;appearance:none;will-change:transition;transition:height .5s ease}progress[value]::-webkit-progress-bar{background:#ccc}progress[value]::-webkit-progress-value{position:relative;background:#ef272d;will-change:transition;transition:width .5s ease-in-out}progress[value]::-webkit-progress-value:after{position:absolute;content:'';width:.25em;height:100%;right:0;background:#fff;-webkit-animation:pulsate 1s ease-out infinite;opacity:.5}@-webkit-keyframes pulsate{0%{opacity:.25}50%{opacity:.5}100%{opacity:.25}}</style>
-        <label>
-            <span class="h5">{{ label }}</span>
-            <span class="right">{{ step }} of {{ steps }} Completed</span>
-        </label>
-        <progress max="100" value="{{ (step / steps) * 100 }}" data-value="{{ (step / steps) * 100 }}"></progress>
+<polymer-element name="progress-bar" attributes="">
+<template>
+  <style>:host {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+/* ==========================================================================
+    Progress -- Version: 0.2.1 - Compiled: #{timestamp()}
+   ========================================================================== */
+label {
+  display: inline-block;
+  margin-bottom: .5em;
+}
+.progress-bar {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 100%;
+  height: .5em;
+  background: #cccccc;
+}
+.progress-bar span {
+  position: relative;
+  display: block;
+  width: attr(value);
+  height: .5em;
+  background-color: #ef272d;
+  text-indent: -9999px;
+}
+.progress-bar span:after {
+  position: absolute;
+  content: '';
+  width: .25em;
+  height: 100%;
+  right: 0;
+  background: #ffffff;
+  -webkit-animation: pulsate 1s ease-out infinite;
+  -moz-animation: pulsate 1s ease-out infinite;
+  animation: pulsate 1s ease-out infinite;
+  opacity: .5;
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .75;
+  }
+  100% {
+    opacity: .25;
+  }
+}
+@-moz-keyframes pulsate {
+  0% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .75;
+  }
+  100% {
+    opacity: .25;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .75;
+  }
+  100% {
+    opacity: .25;
+  }
+}
+</style>
 
-        <!-- <div class="badges">
-          <div class="badge registration earned"></div>
-          <div class="badge biography earned"></div>
-          <div class="badge recommend earned"></div>
-          <div class="badge action"></div>
-        </div> -->
+  <label>
+    <span class="h5">{{ label }}</span>
+  </label>
+  <div class="progress-bar">
+    <span style="width: {{ value }}%;">Progress: {{ value }}%</span>
+  </div>
 
-        <hr>
-
-        <label for="">Slide me</label>
-        <input type="range" name="points" min="1" max="{{ steps }}" value="{{ step }}">
-    </template>
-<script>(function e(t, n, r) {
+</template>
+<script built="/Users/Q/Desktop/progress-bar/src/progress-bar.litcoffee">(function e(t, n, r) {
     function s(o, u) {
         if (!n[o]) {
             if (!t[o]) {
