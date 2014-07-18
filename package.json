@@ -1,5 +1,5 @@
 {
-  "name": "progress-bar",
+  "name": "glg-progress-bar",
   "version": "0.0.0",
   "dependencies": {
     "polymer-tools": "git://github.com/custom-elements/polymer-tools#master",
