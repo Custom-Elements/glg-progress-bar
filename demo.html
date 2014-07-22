@@ -4,25 +4,22 @@
   <head>
     <title>progress-bar</title>
     <script src="http://localhost:35729/livereload.js"></script>
-    <script src="node_modules/polymer/platform.js"></script>
-    <link rel="import" href="node_modules/polymer/polymer.html">
-    <link rel="import" href="build/progress-bar.html">
+    <!-- <script src="node_modules/polymer/platform.js"></script> -->
+    <link id="p-bar" rel="import" href="build/progress-bar.html">
     <style>
       body {
         font-family: "Helvetica Neue", "Helvetica", Arial;
       }
     </style>
   </head>
-  <body unresolved>
-    <div id="holder">
-      <progress-bar>
+  <body>
 
-      </progress-bar>
-    </div>
     <script>
-      document.addEventListener('polymer-ready', function() {
-        //poke your element here
-      })
+      //var imp = document.querySelector("#p-bar").import;
+      // var elm = document.querySelector(".progress-bar-element");
+      // document.body.appendChild(elm.cloneNode(true));
+      //var holder = document.querySelector("#holder");
+
     </script>
   </body>
 </html>

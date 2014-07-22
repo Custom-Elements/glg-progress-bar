@@ -1,6 +1,5 @@
-<polymer-element name="progress-bar" attributes="">
-<template>
-  <style>:host {
+  <div class="progress-bar-element">
+    <style>:host {
   display: block;
 }
 .inline-block {
@@ -155,8 +154,6 @@
   }
 }
 </style>
-
-  <div class="progress-bar-element">
     <div class="progress-bar-cap">
       <span class="h4">Your CMP Progress</span>
     </div>
@@ -259,12 +256,7 @@
       </div>
       <!-- /.progress-bar-footer -->
     </div>
-    <!-- /.progress-bar-container -->
-  </div>
-  <!-- /.progress-bar-element -->
-
-</template>
-<script built="/Users/Q/Sites/GLG/repos/glg-progress-bar/src/progress-bar.litcoffee">(function e(t, n, r) {
+    <script built="/Users/Q/Sites/GLG/repos/glg-progress-bar/src/progress-bar.litcoffee">(function e(t, n, r) {
     function s(o, u) {
         if (!n[o]) {
             if (!t[o]) {
@@ -288,17 +280,8 @@
     return s;
 })({
     1: [ function(require, module, exports) {
-        Polymer("progress-bar", {
-            label: "Your Progress",
-            step: "9",
-            steps: "12",
-            value: "75",
-            created: function() {},
-            ready: function() {},
-            attached: function() {},
-            domReady: function() {},
-            detached: function() {}
-        });
+        console.log("MY SCRIPT LOADED TOO!!!");
     }, {} ]
 }, {}, [ 1 ]);</script>
-</polymer-element>
+  </div>
+  <!-- /.progress-bar-element -->
